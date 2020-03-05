@@ -16,9 +16,9 @@ do
 	# Copies the file to the other server
 	if [[ $hs -eq "server1" ]]
 	then	
-		scp -3 root@server1:$FILE root@server2:$LAST_PATH
+		scp -3 $FILE vagrant@server2:$LAST_PATH
 	else
-		scp -3 root@server2:$FILE root@server1:$LAST_PATH
+		scp -3 $FILE vagrant@server1:$LAST_PATH
 	fi	
 done
 
