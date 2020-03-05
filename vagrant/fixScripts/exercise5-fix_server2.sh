@@ -1,3 +1,3 @@
 #!/bin/bash
-ssh-keygen -t rsa
-ssh-copy-id root@server1
+ssh-keygen -t rsa -f /home/vagrant/.ssh/id_rsa -N ""
+ssh-copy-id -i /home/vagrant/.ssh/id_rsa vagrant@server1
