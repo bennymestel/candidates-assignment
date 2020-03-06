@@ -11,7 +11,7 @@ LAST_PATH=$last
 # Goes through the input array and copies each file to the destination path
 for FILE in "$@"
 do
-	bytes+="$(wc -c $FILE | awk '{print $1}')"
+	let "bytes+="$(wc -c $FILE | awk '{print $1}')""
 	
 	# Copies the file to the other server
 	if [[ $hs -eq "server1" ]]
@@ -22,4 +22,4 @@ do
 	fi	
 done
 
-echo "$bytes"
+echo "There were $bytes bytes transferred"
